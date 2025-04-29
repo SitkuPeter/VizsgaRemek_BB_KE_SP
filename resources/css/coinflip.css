@@ -1,0 +1,153 @@
+
+/* General Page Styling */
+body {
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ min-height: 100vh;
+ background-color: #1a1e27; /* Darker background for contrast */
+ margin: 0;
+ font-family: 'Arial', sans-serif;
+ color: white;
+ text-align: center;
+}
+
+/* Center the Coin Container */
+#coin-container {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ margin-top: 30px;
+ width: 100%;
+ height: auto;
+}
+
+/* Coin Base Styling */
+.coin {
+ width: 120px;
+ height: 120px;
+ position: relative;
+ transform-style: preserve-3d;
+ transition: transform 1.5s ease-in-out;
+ animation: flip 1.5s ease-in-out;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+ box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+/* Coin Sides Styling */
+.coin-side {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ border-radius: 50%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ font-size: 2rem;
+ font-weight: bold;
+ backface-visibility: hidden;
+ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+ border: 3px solid rgba(255, 255, 255, 0.5);
+}
+
+/* Heads Side Styling */
+.heads {
+ background: radial-gradient(circle, #ffd700 10%, #e6b800 50%, #b38f00 90%);
+ color: white;
+ transform: rotateY(0deg);
+}
+
+/* Tails Side Styling */
+.tails {
+ background: radial-gradient(circle, #c0c0c0 10%, #a8a8a8 50%, #909090 90%);
+ color: black;
+ transform: rotateY(180deg);
+}
+
+/* Letter Circle for H and T */
+.letter-circle {
+ width: 50px;
+ height: 50px;
+ border: 3px solid black;
+ border-radius: 50%;
+ background: white;
+ color: black;
+ font-size: 1.5rem;
+ font-weight: bold;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Flip Animation */
+@keyframes flip {
+ 0% {
+     transform: rotateY(0deg);
+ }
+ 50% {
+     transform: rotateY(900deg);
+ }
+ 100% {
+     transform: rotateY(1800deg);
+ }
+}
+
+/* Button Styling */
+button {
+ padding: 12px 24px;
+ font-size: 1rem;
+ font-weight: bold;
+ border: none;
+ border-radius: 8px;
+ cursor: pointer;
+ transition: transform 0.2s ease, background-color 0.3s ease;
+ display: flex;
+ align-items: center;
+ gap: 5px;
+}
+
+button#heads-btn {
+ background-color: #4caf50;
+ color: white;
+}
+
+button#tails-btn {
+ background-color: #f44336;
+ color: white;
+}
+
+button:hover {
+ transform: scale(1.05);
+ opacity: 0.9;
+}
+
+button:disabled {
+ background-color: #777;
+ cursor: not-allowed;
+}
+
+/* Result Message Styling */
+#result {
+ font-size: 1.5rem;
+ font-weight: bold;
+ margin-top: 20px;
+ text-transform: uppercase;
+}
+
+/* Reset Button Styling */
+#reset-btn {
+ background-color: #2196f3;
+ color: white;
+ margin-top: 20px;
+ padding: 12px 24px;
+ border-radius: 8px;
+}
+
+#reset-btn:hover {
+ background-color: #1976d2;
+}

@@ -1,0 +1,11 @@
+/* Subtle casino-themed background gradient */
+.bg-casino-gradient {
+    background: radial-gradient(circle at 50% 20%, #222 60%, #111 100%);
+}
+
+/* Faint casino icon in the background */
+.casino-bg-icon {
+    width: 180px;
+    height: 180px;
+    background: url('https://cdn.pixabay.com/photo/2016/03/31/19/14/ace-1296838_1280.png') no-repeat center/contain;
+}

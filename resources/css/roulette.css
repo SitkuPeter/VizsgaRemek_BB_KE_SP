@@ -1,0 +1,11 @@
+
+
+#previous-winners-container div {
+  width: 3rem;
+  height: 3rem;
+  background-color: #ef4444; /* Red for winners */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}

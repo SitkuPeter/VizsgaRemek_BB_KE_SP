@@ -1,0 +1,216 @@
+/* General Page Setup */
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    background-color: #121212; /* Dark casino vibe */
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin-top: 10vh;
+}
+
+/* Centered Blackjack Table */
+#game-container {
+    width: 90vw;
+    max-width: 800px; /* Limit max width for larger screens */
+    height: auto; /* Auto height for better responsiveness */
+    background-color: #006400; /* Green felt */
+    border-radius: 50% 50% 0 0;
+    border: 5px solid gold;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Dealer Section */
+#dealer-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+#dealer-cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+#dealer-score {
+    font-size: 22px;
+    font-weight: bold;
+}
+.hidden-card {
+    width: 80px; /* Reduced size */
+    height: 115px; /* Reduced size */
+    background-image: url('https://via.placeholder.com/80x115?text=Card+Back');
+    background-size: cover;
+    border-radius: 8px;
+}
+
+/* Player Section */
+#player-section {
+    text-align: center;
+    margin-top: 20px;
+}
+#player-cards {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+#player-score {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Action Buttons */
+#action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+button {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 120px; /* Ensure buttons don't shrink too much */
+}
+button:hover {
+    background: linear-gradient(45deg, #FFA500, #FFD700);
+    transform: translateY(-2px);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
+}
+button:disabled {
+    background: #555;
+    color: #aaa;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+/* Betting Area */
+#betting-area {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Chips Layout */
+.chips-container {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+.chip {
+    width: 60px; /* Reduced size */
+    height: 60px; /* Reduced size */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+.chip img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.chip:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Card Styling */
+.card-container {
+    perspective: 1000px;
+    display: inline-block;
+    margin: 5px;
+}
+.card {
+    width: 80px; /* Reduced size */
+    height: 115px; /* Reduced size */
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    cursor: pointer;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+.card-back {
+    background-color: #333;
+    transform: rotateY(180deg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #game-container {
+        width: 95vw;
+        padding: 20px;
+    }
+    #dealer-cards, #player-cards {
+        gap: 8px; /* Reduced gap for smaller screens */
+    }
+    button {
+        width: 100%; /* Full width for buttons */
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    .card {
+        width: 60px; /* Further reduced size */
+        height: 90px; /* Further reduced size */
+    }
+    .chip {
+        width: 50px; /* Further reduced size */
+        height: 50px; /* Further reduced size */
+    }
+}
+
+@media (max-width: 480px) {
+    #dealer-cards, #player-cards {
+        gap: 6px; /* Even smaller gap */
+    }
+    button {
+        font-size: 14px;
+        padding: 8px 15px;
+    }
+    .card {
+        width: 50px; /* Smallest size */
+        height: 75px; /* Smallest size */
+    }
+    .chip {
+        width: 40px; /* Smallest size */
+        height: 40px; /* Smallest size */
+    }
+}

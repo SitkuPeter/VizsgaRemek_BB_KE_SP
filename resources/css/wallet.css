@@ -1,0 +1,35 @@
+/* Modal */
+#progress-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#forfeit-option {
+    z-index: 1100;
+}
+
+/* Progress bar */
+#progress-bar {
+    transition: width linear;
+    will-change: width;
+}
+
+/* Balance card */
+.balance-card {
+    background: linear-gradient(45deg, #0062cc, #007bff);
+}
+
+/* Ad card */
+.ad-card {
+    transition: all 0.3s ease;
+}
+
+.ad-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

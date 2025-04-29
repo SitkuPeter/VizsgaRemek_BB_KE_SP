@@ -1,0 +1,45 @@
+{
+  "name": "kaszino-app",
+  "version": "1.0.0",
+  "description": "KasziNo Electron Desktop App",
+  "author": "Your Name or Company",
+  "main": "electron.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build": "electron-builder",
+    "package": "electron-builder --dir",
+    "clean": "rimraf dist node_modules package-lock.json"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^30.5.1",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.kaszino.app",
+    "productName": "KasziNo",
+    "directories": {
+      "output": "C:/CustomBuilds/MyElectronApp",
+      "buildResources": "build"
+    },
+    "win": {
+      "icon": "C:/Users/bibaz/Documents/GitHub/Loinsdale-Project/KasziNo/public/storage/img/favicon.ico",
+      "target": "nsis"
+    },
+    "mac": {
+      "icon": "C:/Users/bibaz/Documents/GitHub/Loinsdale-Project/KasziNo/public/storage/img/favicon.png"
+    },
+    "linux": {
+      "icon": "C:/Users/bibaz/Documents/GitHub/Loinsdale-Project/KasziNo/public/storage/img/favicon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "files": [
+      "**/*",
+      "!node_modules/electron-builder"
+    ]
+  }
+}

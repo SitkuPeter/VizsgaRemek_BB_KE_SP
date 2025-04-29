@@ -1,0 +1,20 @@
+/* Modal animations */
+.modal {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.modal.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.modal:not(.hidden) {
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* Auto-spin button state */
+#auto-spin:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}

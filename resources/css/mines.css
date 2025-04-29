@@ -1,0 +1,191 @@
+/* Mines Game Styles - Yellow Theme */
+
+/* Grid Tile Styles */
+.mine-tile {
+    width: 100%;
+    aspect-ratio: 1;
+    background-color: #eab308; /* Yellow-500 */
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid #ca8a04; /* Yellow-600 */
+    box-shadow: 0 4px 6px -1px rgba(234, 179, 8, 0.3);
+}
+
+.mine-tile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(234, 179, 8, 0.5);
+    background-color: #facc15; /* Yellow-400 */
+}
+
+.mine-tile.revealed {
+    pointer-events: none;
+}
+
+.mine-tile.gem {
+    background-color: #fbbf24; /* Amber-400 */
+    border-color: #d97706; /* Amber-600 */
+    box-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+}
+
+.mine-tile.mine {
+    background-color: #b91c1c; /* Red-700 */
+    border-color: #991b1b; /* Red-800 */
+}
+
+/* Revealed mine styling */
+.mine-tile.mine-revealed {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(234, 179, 8, 0.8);
+    z-index: 10;
+    animation: pulse-mine 1s ease-in-out 1;
+    position: relative;
+}
+
+/* Add a pulsing glow effect to make mines more visible */
+.mine-tile.mine-revealed::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 12px;
+    background: transparent;
+    border: 3px solid #fcd34d; /* Yellow-300 */
+    opacity: 0.8;
+    animation: glow-pulse 1.5s infinite alternate;
+}
+
+
+
+/* Tile Content */
+.tile-content {
+    font-size: 1.5rem;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Make bomb emoji larger and more visible */
+.mine-revealed .tile-content {
+    font-size: 2.5rem;
+    text-shadow: 0 0 8px rgba(255, 215, 0, 1); /* Gold color shadow */
+    animation: bomb-reveal 0.5s ease-out forwards;
+    opacity: 1 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+.revealed .tile-content {
+    opacity: 1;
+}
+
+
+
+/* Animation for revealing tiles */
+@keyframes reveal {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bomb-reveal {
+    0% { transform: scale(0); opacity: 0; }
+    50% { transform: scale(1.3); opacity: 1; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes pulse-mine {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1.1); }
+}
+
+@keyframes glow-pulse {
+    0% { opacity: 0.3; box-shadow: 0 0 5px rgba(234, 179, 8, 0.3); }
+    100% { opacity: 0.8; box-shadow: 0 0 15px rgba(234, 179, 8, 0.7); }
+}
+
+.revealed .tile-content {
+    animation: reveal 0.3s forwards;
+}
+
+/* Game controls */
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Multiplier progress bar animation */
+@keyframes pulse {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+#multiplier-progress.active {
+    animation: pulse 1.5s infinite;
+    background: linear-gradient(90deg, #fbbf24, #f59e0b, #d97706); /* Yellow gradient */
+}
+
+/* Game result message styling */
+#game-result.win {
+    color: #f59e0b; /* Yellow-500 */
+    text-shadow: 0 0 5px rgba(234, 179, 8, 0.3);
+}
+
+#game-result.lose {
+    color: #ef4444; /* Red-500 */
+}
+
+/* Game history styling */
+#game-history {
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 0.8rem;
+    border-radius: 0.5rem;
+    background-color: rgba(234, 179, 8, 0.1); /* Yellow background with opacity */
+    border: 1px solid rgba(234, 179, 8, 0.3);
+    box-shadow: 0 4px 6px -1px rgba(234, 179, 8, 0.1);
+}
+
+#game-history li {
+    padding: 0.4rem 0.5rem;
+    margin-bottom: 0.3rem;
+    border-bottom: 1px solid rgba(234, 179, 8, 0.2);
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+}
+
+#game-history li:hover {
+    background-color: rgba(234, 179, 8, 0.15);
+}
+
+#game-history li:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+
