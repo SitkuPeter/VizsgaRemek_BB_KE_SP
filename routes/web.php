@@ -89,6 +89,9 @@ Route::get('/games/coinflip', [GameController::class, 'coinflip'])->name('coinfl
 Route::get('/games/slot', [GameController::class, 'slot'])->name('slot');
 Route::get('/games/rock-paper-scissors', [GameController::class, 'rock'])->name('rock-paper-scissors');
 Route::get('/games/mines', [GameController::class, 'mines'])->name('mines');
+Route::get('/games/crossy-road', function () {
+    return view('pages.games.crossyroad');
+})->name('crossy-road');
 
 
 // Felhasználói statisztikák

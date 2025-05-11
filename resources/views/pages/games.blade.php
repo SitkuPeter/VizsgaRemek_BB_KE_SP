@@ -14,7 +14,7 @@
                                 class="w-full h-full object-cover rounded-md transition-transform duration-500 hover:scale-110">
                         </div>
                         <h4 class="text-base sm:text-lg font-semibold mt-3 sm:mt-4">{{ $game }}</h4>
-                        <a href="{{ in_array(strtolower($game), ['blackjack', 'roulette', 'crash', 'coinflip', 'slot', 'rock-paper-scissors', 'mines']) ? route(strtolower($game)) : '#' }}"
+                        <a href="{{ in_array(strtolower($game), ['blackjack', 'roulette', 'crash', 'coinflip', 'slot', 'rock-paper-scissors', 'mines' , 'crossy-road']) ? route(strtolower($game)) : '#' }}"
                             class="block mt-2 sm:mt-3" target="_blank">
                             <button
                                     class="w-full inline-flex justify-center items-center px-3 py-2 sm:px-4 sm:py-2 bg-gray-800 dark:bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-white dark:text-gray-800 uppercase tracking-widest hover:bg-gray-700 dark:hover:bg-white focus:bg-gray-700 dark:focus:bg-white active:bg-gray-900 dark:active:bg-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-gray-800 transition ease-in-out duration-150">
